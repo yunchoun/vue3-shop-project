@@ -1,0 +1,37 @@
+/*
+    *** Pretendard
+*/
+@font-face {
+    font-family: "PretendardT";
+    src: url(../font/Pretendard-Thin.woff) format("woff");
+}
+@font-face {
+    font-family: "PretendardL";
+    src: url(../font/Pretendard-Light.woff) format("woff");
+}
+@font-face {
+    font-family: "PretendardR";
+    src: url(../font/Pretendard-Regular.woff) format("woff");
+}
+@font-face {
+    font-family: "PretendardM";
+    src: url(../font/Pretendard-Medium.woff) format("woff");
+}
+@font-face {
+    font-family: "PretendardB";
+    src: url(../font/Pretendard-Bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: "PretendardSB";
+    src: url(../font/Pretendard-SemiBold.woff) format("woff");
+}
+
+@font-face {
+    font-family: "PretendardEB";
+    src: url(../font/Pretendard-ExtraBold.woff) format("woff");
+}
+@font-face {
+    font-family: "PretendardBlk";
+    src: url(../font/Pretendard-Black.woff) format("woff");
+}
