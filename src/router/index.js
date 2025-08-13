@@ -3,6 +3,7 @@ import HomeView from '@/components/TheHome.vue';
 import ProductList from '@/components/product/TheList.vue';
 import UserLogin from '@/components/user/TheLogin.vue';
 import UserJoin from '@/components/user/TheJoin.vue';
+import TheCart from '@/components/cart/TheCart.vue';
 
 const routes = [
     {
@@ -24,7 +25,13 @@ const routes = [
         path: '/join',
         name: 'UserJoin',
         component: UserJoin
+    },
+    {
+        path: '/cart',
+        name: 'TheCart',
+        component: TheCart
     }
+    
 ]
 
 const router = createRouter({

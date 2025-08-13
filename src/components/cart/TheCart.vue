@@ -1,5 +1,5 @@
 <template>
-    <div></div>
+    <div>장바구니</div>
 </template>
 
 <script>
