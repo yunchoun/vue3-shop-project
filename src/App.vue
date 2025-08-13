@@ -1,9 +1,11 @@
 <template>
-  <header>
+  <div class="userWrap">
     <ul class="user">
       <li class="login"><router-link to="/login">로그인</router-link></li>
       <li class="join"><router-link to="/join">회원가입</router-link></li>
     </ul>
+  </div>
+  <header>
     <div class="flexWrap g-50 p-10">
       <div class="logo"><router-link to='/'><img src="@/assets/images/logo.png" alt="로고" /></router-link></div>
       <div class="flexWrap searchForm">
@@ -16,7 +18,7 @@
         <i class="bi bi-bag"></i>
         <span class="text">장바구니</span>
       </router-link>
-      
+
     </div>
     <nav class="flexWrap start g-50 p-10 category">
       <ul>
@@ -29,7 +31,9 @@
     <router-view></router-view>
   </div>
 
-  <footer></footer>
+  <footer>
+    <div class="copy">© Copyright 2025</div>
+  </footer>
 </template>
 
 <script>
@@ -68,6 +72,19 @@
 
 /* */
 
+.userWrap { background-color: #e5e7eb; }
+.user {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+
 header {
   width: 100%;
   max-width: 1400px;
@@ -85,17 +102,6 @@ header .logo img {
 header nav {
   display: flex;
   align-items: center;
-}
-
-.user {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 30px;
-  padding: 5px 10px;
-  box-sizing: border-box;
-  background-color: #e5e7eb;
 }
 
 .searchForm {
@@ -117,13 +123,15 @@ header nav {
   padding: 0 20px;
 }
 
-input:focus ,select:focus {
+input:focus,
+select:focus {
   border: none;
   border-right: 1px solid #dbdbdb;
   outline: none;
 }
 
-input:focus-visible, select:focus-visible {
+input:focus-visible,
+select:focus-visible {
   border: none;
   border-right: 1px solid #dbdbdb;
   outline: none;
@@ -145,5 +153,21 @@ input:focus-visible, select:focus-visible {
 
 .cart .text {
   font-size: 14px;
+}
+
+footer {
+  background-color: rgb(77, 77, 77);
+  height: 100px;
+}
+
+footer .copy {
+  width: 100%;
+  height: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
 }
 </style>
