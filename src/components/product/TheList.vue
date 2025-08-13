@@ -133,7 +133,7 @@ const highPrice = () => {
     box-sizing: border-box;
     width: calc(100% / 4);
     border: 0 solid transparent;
-    border-width: 0 20px 20px 0;
+    border-width: 0 20px 6dvb 0;
 }
 
 .item .imgArea {
@@ -153,14 +153,16 @@ const highPrice = () => {
     object-position: center;
     display: block;
 }
+.item .name { margin-top: 20px; }
+.item .price { margin-top: 5px; }
 
 .pagination {
     position: sticky;
     bottom: 0;
-    margin-top: 50px;
+    margin: 30px 0;
     background-color: rgba(255, 255, 255, 0.5);
-    padding: 10px;
     box-sizing: border-box;
+    padding: 10px 0;
 }
 
 .pagination li {

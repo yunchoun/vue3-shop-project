@@ -109,6 +109,7 @@ header nav {
 
 .searchForm {
   border: 2px solid #3470cc;
+  box-sizing: border-box;
 }
 
 .searchForm select {
