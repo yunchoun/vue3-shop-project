@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '@/components/TheHome.vue';
 import ProductList from '@/components/product/TheList.vue';
+import ProductView from '@/components/product/TheView.vue';
 import UserLogin from '@/components/user/TheLogin.vue';
 import UserJoin from '@/components/user/TheJoin.vue';
 import TheCart from '@/components/cart/TheCart.vue';
@@ -17,6 +18,11 @@ const routes = [
         component: ProductList
     },
     {
+        path: '/product/view/:id',
+        name: 'ProductView',
+        component: ProductView
+    },
+    {
         path: '/login',
         name: 'UserLogin',
         component: UserLogin
@@ -31,7 +37,7 @@ const routes = [
         name: 'TheCart',
         component: TheCart
     }
-    
+
 ]
 
 const router = createRouter({

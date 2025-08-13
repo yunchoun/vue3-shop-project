@@ -64,6 +64,9 @@
 .g-50 {
   gap: 50px;
 }
+.g-10 {
+  gap: 10px;
+}
 
 .p-10 {
   padding: 10px;
@@ -105,7 +108,7 @@ header nav {
 }
 
 .searchForm {
-  border: 2px solid #293eff;
+  border: 2px solid #3470cc;
 }
 
 .searchForm select {
