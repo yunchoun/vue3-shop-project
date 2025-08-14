@@ -3,9 +3,9 @@
     <div class="contentWrap">
         <div class="banner"></div>
         <ul class="sort-ranking">
-            <li class="srot-low-price" @click="lowPrice">낮은가격순</li>
-            <li class="srot-high-price" @click="highPrice">높은가격순</li>
-            <li class="srot-newest">최신순</li>
+            <li class="srot-low-price" @click="lowPrice" :class="{on: activeSort === 'low'}">낮은가격순</li>
+            <li class="srot-high-price" @click="highPrice" :class="{on: activeSort === 'high'}">높은가격순</li>
+            <li class="srot-newest" @click="newest" :class="{on: activeSort === 'newest'}">최신순</li>
         </ul>
 
         <div class="itemWrapper">
@@ -79,17 +79,29 @@ const goNext = () => {
     }
 };
 
+
+const activeSort = ref(''); // 현재 활성화된 정렬 기준을 저장하는 변수  
+
 // 낮은가격순으로 정렬하는 함수
 // items 배열을 직접 수정하고, currentPage를 1로 초기화하여 첫 페이지로 이동.
 const lowPrice = () => {
     items.value.sort((a, b) => a.price - b.price);
     currentPage.value = 1; // 정렬 후 첫 페이지로 이동
     console.log(items.value.sort((a, b) => a.price - b.price))
+    activeSort.value = 'low'; // 정렬 기준을 업데이트
 };
 
 const highPrice = () => {
     items.value.sort((a, b) => b.price - a.price);
     currentPage.value = 1; // 정렬 후 첫 페이지로 이동
+    activeSort.value = 'high'; 
+};
+
+const newest = () => {
+    // 최신순 정렬을 위해 id를 기준으로 내림차순 정렬
+    items.value.sort((a, b) => b.id - a.id);
+    currentPage.value = 1; // 정렬 후 첫 페이지로 이동
+    activeSort.value = 'newest'; 
 };
 
 </script>
@@ -114,6 +126,8 @@ const highPrice = () => {
     font-family: "PretendardM";
     cursor: pointer;
 }
+.sort-ranking li.on {
+    color: #3470cc; }
 
 .itemWrapper {
     width: 100%; 
