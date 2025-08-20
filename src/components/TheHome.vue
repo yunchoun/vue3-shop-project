@@ -1,5 +1,5 @@
 <template>
-    <div class="banner">배너</div>
+    <div class="banner"><img src="@/assets/images/bannerImg.jpg" alt=""></div>
 </template>
 
 <script>
@@ -7,5 +7,6 @@
 </script>
 
 <style>
-.banner { width: 100%; height: 500px; background-color: rgb(121, 173, 17); } 
+.banner { width: 100%; height: 600px;  } 
+.banner img { width: 100%; height: 100%; object-fit: cover; }
 </style>

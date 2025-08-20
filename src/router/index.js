@@ -10,17 +10,30 @@ const routes = [
     {
         path: '/',
         name: 'HomeView',
-        component: HomeView
+        component: HomeView,
+        meta: { title: '홈' },
     },
     {
         path: '/product',
         name: 'ProductList',
-        component: ProductList
+        component: ProductList,
+        meta: {
+            breadcrumb: [
+                { label: '상품', to: { name: 'ProductList' } },
+            ]
+        }
     },
     {
         path: '/product/view/:id',
         name: 'ProductView',
-        component: ProductView
+        component: ProductView,
+        props: router => ({ id: Number(router.params.id) }),
+        meta: {
+            breadcrumb: [
+                { label: '상품', to: { name: 'ProductList' } },
+                { label: '__PRODUCT__' },
+            ]
+        }
     },
     {
         path: '/login',

@@ -20,12 +20,10 @@
       </router-link>
 
     </div>
-    <nav class="flexWrap start g-50 p-10 category">
-      <ul>
-        <li><router-link to="/product">상품</router-link></li>
-      </ul>
-    </nav>
+    <TheNav></TheNav>
   </header>
+
+  <TheBreadcrumb v-if="route.name !== 'HomeView'"></TheBreadcrumb>
 
   <div class="viewContent">
     <router-view></router-view>
@@ -36,7 +34,11 @@
   </footer>
 </template>
 
-<script>
+<script setup>
+import { useRoute } from 'vue-router'
+import TheBreadcrumb from '@/components/layout/TheBreadcrumb.vue';
+import TheNav from '@/components/layout/TheNav.vue';
+const route = useRoute();
 
 </script>
 <style>
@@ -64,6 +66,7 @@
 .g-50 {
   gap: 50px;
 }
+
 .g-10 {
   gap: 10px;
 }
@@ -75,7 +78,10 @@
 
 /* */
 
-.userWrap { background-color: #e5e7eb; }
+.userWrap {
+  background-color: #e5e7eb;
+}
+
 .user {
   width: 100%;
   max-width: 1400px;
@@ -139,10 +145,6 @@ select:focus-visible {
   border: none;
   border-right: 1px solid #dbdbdb;
   outline: none;
-}
-
-.category {
-  border-top: 1px solid #d1d1d1;
 }
 
 .cart {
