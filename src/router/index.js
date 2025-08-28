@@ -5,12 +5,14 @@ import ProductList from '@/components/product/TheList.vue';
 import ProductView from '@/components/product/TheView.vue';
 import UserLogin from '@/components/user/TheLogin.vue';
 import UserJoin from '@/components/user/TheJoin.vue';
+import UserMypage from '@/components/user/TheMypage.vue';
 import TheCart from '@/components/cart/TheCart.vue';
+
 
 const routes = [
     {
         path: '/',
-        name: 'MainView>',
+        name: 'MainView',
         component: MainView,
         meta: { title: '홈' },
     },
@@ -54,6 +56,11 @@ const routes = [
         path: '/join',
         name: 'UserJoin',
         component: UserJoin
+    },
+    {
+        path: '/mypage',
+        name: 'UserMypage',
+        component: UserMypage
     },
     {
         path: '/cart',

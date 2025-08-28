@@ -4,8 +4,8 @@
         <div class="flexWrap start g-50 productWrap">
             <div class="imgArea" v-if="product"><img :src="require(`@/assets/images/${product.src}`)" alt=""></div>
             <div class="rightArea">
-                <div class="name">{{ product.name }}</div>
-                <div class="price">{{ product.price }}</div>
+                <div class="mainName">{{ product.name }}</div>
+                <div class="mainPrice">{{ (product.price).toLocaleString() }}원</div>
 
                 <div class="flexWrap start countWrap">
                     <button class="btn minus" @click="countStore.decrement">-</button>
@@ -17,7 +17,8 @@
                 <div class="buttonWrap">
                     <button class="btn purchase">바로 구매하기</button>
                     <div class="btn zzim"><i class="bi bi-heart"></i>
-                    <i class="bi bi-heart-fill"></i></div>
+                        <i class="bi bi-heart-fill"></i>
+                    </div>
                     <button class="btn cart">장바구니 담기</button>
                 </div>
             </div>
@@ -49,15 +50,30 @@ const product = computed(() => {
 }
 
 .imgArea {
-    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    height: 400px; background-color: #f5f5f5;
 }
 
 .imgArea img {
-    width: 100%;
+    height: 100%;
 }
 
 .rightArea {
     flex: 1;
+}
+
+.rightArea .mainName {
+    font-size: 20px;
+    font-family: "PretendardM";
+    margin-bottom: 10px; border-bottom: 1px solid #ccc; padding-bottom: 10px; box-sizing: border-box;
+}
+.rightArea .mainPrice {
+    font-size: 24px;
+    font-family: "PretendardB";
+    margin-bottom: 20px; color: #5f5f5f;
 }
 
 .countWrap {
